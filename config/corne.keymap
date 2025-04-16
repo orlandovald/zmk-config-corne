@@ -63,11 +63,11 @@
 &kp ESC    &kp Q              &kp W              &mtsingle LA(E) E    &kp R              &kp T          &kp Y              &kp U               &kp I                 &kp O             &kp P            &kp MINUS
 &kp GRAVE  &hml LCTRL A       &hml LEFT_ALT S    &hml LEFT_COMMAND D  &hml LSHIFT F      &mt SPACE G    &kp H              &hmr RIGHT_SHIFT J  &hmr RIGHT_COMMAND K  &hmr RIGHT_ALT L  &hmr RCTRL SEMI  &kp SQT
 &kp TAB    &mtsingle LG(Z) Z  &mtsingle LG(X) X  &mtsingle LG(C) C    &mtsingle LG(V) V  &kp B          &mtsingle LA(N) N  &kp M               &kp COMMA             &kp DOT           &kp FSLH         &kp EQUAL
-                                                 &none                &lt 1 BACKSPACE    &lt 3 ENTER    &kp BACKSPACE      &lt 2 SPACE         &none
+                                                 &none                &lt 1 BACKSPACE    &lt 3 ENTER    &lt 4 BACKSPACE    &lt 2 SPACE         &none
             >;
         };
 
-        lower_layer {
+        symbols {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
             // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
@@ -75,14 +75,14 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6    &kp N7    &kp N8    &kp N9     &kp N0  &kp BSPC
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &trans  &trans
-&kp LSHFT   &trans        &trans        &trans        &trans        &trans          &trans    &trans    &trans    &trans     &trans  &trans
-                                        &kp LGUI      &trans        &kp SPACE       &kp RET   &trans    &kp RALT
+&trans  &kp EXCLAMATION  &kp AT_SIGN  &kp HASH  &kp DOLLAR  &kp PERCENT    &kp CARET  &kp AMPERSAND  &kp ASTERISK   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
+&trans  &trans           &trans       &trans    &trans      &trans         &trans     &trans         &kp BACKSLASH  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans
+&trans  &trans           &trans       &trans    &trans      &trans         &trans     &trans         &kp PIPE       &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans
+                                      &none     &trans      &trans         &trans     &trans         &none
             >;
         };
 
-        raise_layer {
+        arrows {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
             // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
@@ -90,19 +90,28 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-&kp LCTRL  &trans    &trans  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
-&kp LSHFT  &trans    &trans  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
-                             &kp LGUI  &trans    &kp SPACE    &kp RET    &trans     &kp RALT
+&trans        &trans  &trans  &trans  &trans  &trans    &kp LC(UP_ARROW)  &kp PAGE_DOWN    &kp PAGE_UP   &trans           &trans                &trans
+&trans        &trans  &trans  &trans  &trans  &trans    &kp LEFT_ARROW    &kp DOWN_ARROW   &kp UP_ARROW  &kp RIGHT_ARROW  &trans                &trans
+&kp CAPSLOCK  &trans  &trans  &trans  &trans  &trans    &kp LG(SPACE)     &kp LS(LC(TAB))  &kp LC(TAB)   &trans           &kp LG(LS(NUMBER_4))  &kp RC(RG(Q))
+                              &none   &trans  &trans    &trans            &trans           &none
             >;
         };
 
-        Numbers {
+        numbers {
             bindings = <
 &trans  &kp F1   &kp F2   &kp F3   &kp F4   &kp F5     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9              &trans  &trans  &trans
 &trans  &kp F6   &kp F7   &kp F8   &kp F9   &kp F10    &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6              &trans  &trans  &trans
 &trans  &kp F11  &kp F12  &kp F13  &kp F14  &kp F15    &kp KP_NUMBER_1  &kp KP_NUMBER_2  &mtsingle COMMA KP_NUMBER_3  &trans  &trans  &trans
                           &trans   &trans   &trans     &trans           &kp KP_NUMBER_0  &trans
+            >;
+        };
+
+        system {
+            bindings = <
+&trans  &kp EXCLAMATION  &kp AT_SIGN   &kp HASH      &kp DOLLAR    &kp PERCENT     &kp N6    &kp N7    &kp N8    &kp N9     &kp N0  &kp BSPC
+&trans  &bt BT_SEL 0     &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &trans  &trans
+&trans  &trans           &trans        &trans        &trans        &trans          &trans    &trans    &trans    &trans     &trans  &trans
+                                       &kp LGUI      &trans        &kp SPACE       &kp RET   &trans    &kp RALT
             >;
         };
     };
